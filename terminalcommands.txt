@@ -1,0 +1,16 @@
+# Go download latest version of SDL for Mac (ends in .dmg, this method was tested with: SDL2-2.24.0.dmg): 
+https://github.com/libsdl-org/SDL/releases/
+
+# Grab filename and mount it (alternatively you can go double click the file in your Downloads thru finder)
+hdiutil attach ~/Downloads/SDL*.dmg
+
+# copy SDL framework into ~/Library/Frameworks (make sure you only have one SDL2.*.dmg in your downloads folder or this will error)
+sudo cp -r /Volumes/SDL2/SDL2.framework /Library/Frameworks/Headers
+
+# [optional] open the readme in TextEdit
+open -a TextEdit /Volumes/SDL2/ReadMe.txt
+
+# eject/unmount .dmg (can do this on desktop using mouse as well)
+hdiutil unmount /Volumes/SDL2
+
+# clone the repo for the starter code
