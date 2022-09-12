@@ -16,7 +16,6 @@ https://github.com/libsdl-org/SDL/releases/
 hdiutil attach ~/Downloads/SDL*.dmg
 ## 3b. (alternatively you can go double click the file in your Downloads thru finder)
 
-
 ## 4a. [in Terminal] Use the below command to copy SDL framework into '/Library/Frameworks' (make sure you only have one SDL2.*.dmg in your downloads folder or this will error). 
 sudo cp -r /Volumes/SDL2/SDL2.framework /Library/Frameworks/
 ### Note: This is NOT the same as '~/Library/Frameworks'...both can work but my code is set up to use the root version of Library (/Library, not ~/Library)
@@ -28,7 +27,7 @@ open -a TextEdit /Volumes/SDL2/ReadMe.txt
 ## 6. [in Terminal, not super important for now] Eject/unmount .dmg (can do this on desktop using right-click -> 'eject' as well)
 hdiutil unmount /Volumes/SDL2
 
-## 7. [in Terminal] navigate to a folder where you want the downloaded folder to go and clone the repo for the starter code (if you haven't already)
+## 7. [in Terminal] navigate to a folder where you want the downloaded project folder to go and clone the repo for the starter code (if you haven't already)
 git clone https://github.com/rosejoshua/QuickSDL2Mac.git
 
 ## 8. [in Terminal] Go into the folder we just downloaded from github
