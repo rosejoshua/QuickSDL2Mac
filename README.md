@@ -1,7 +1,6 @@
 # QuickSDL2Mac
 I went to get SDL running on my Mac after using it on Windows for a while and had a terrible time getting the newer version to work. After finally 
-figuring it out, I wanted to put this together to hopefully save the next person a bunch of time and frustration. In the SDL dev community's defense,
-apparently Apple made some changes with how frameworks are referenced and it resulted in some confusing changes for setting up SDL on Mac.
+figuring it out, I wanted to put this together to hopefully save the next person a bunch of time and frustration.
 
 This is with SDL 2 version 2.24.0 tested on MacOS Monterey 12.4 using Clang++. I tried to make it as beginner-friendly as possible.
 Please reach out at jrose.me/contact if there is something confusing or needing correction.
@@ -50,6 +49,6 @@ chmod u+x comprun.sh
 ## 13a. [in Terminal] run the below script to try and compile the c++ code, you will probably get the security error because we are trying to use downloaded SDL2 code and MacOs doesn't trust it by default. Hopefully you see the popup. You then need to open 'Security and Privacy' (COMMAND + SPACEBAR -> search "security and privacy" and press 'Enter'). Look for the option to approve the security exception, (click the lock icon as needed to allow changes and save). Then try and run the script again:
 ./comprun.sh
 
-## 13b. Alternatively you can find 'app' in the folder in finder and double click it but the script is pretty convenient
+## 13b. Alternatively you can find 'app' in the folder in finder and double click it but the script is pretty convenient...rerun the script after you change the code to recompile and relaunch the app
 
 ### Hopefully it works for you after approving the security change in your settings. You should have a pink rectangle you can move with the arrow keys...maybe more if I've added functinality to the starter code. It's all in one file containinig the main method, so you obviously want to start breaking it apart into classes or you'll end up with spaghetti code...but you do you! If you have issues or something is confusing, go to jrose.me/contact and send me a message or leave a comment on the YouTube video for this code in my channel; https://www.youtube.com/channel/UCSrxiAK9F0pyxDUpr3ETf_Q which should eventually be channel/jrose.me. I desperately want to be loved so I'll probably look into your issue pretty quickly.
