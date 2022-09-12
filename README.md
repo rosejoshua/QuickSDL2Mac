@@ -20,7 +20,7 @@ hdiutil attach ~/Downloads/SDL*.dmg
 ## 4a. [in Terminal] Use the below command to copy SDL framework into '/Library/Frameworks' (make sure you only have one SDL2.*.dmg in your downloads folder or this will error). 
 sudo cp -r /Volumes/SDL2/SDL2.framework /Library/Frameworks/
 ### Note: This is NOT the same as '~/Library/Frameworks'...both can work but my code is set up to use the root version of Library (/Library, not ~/Library)
-## 4b. Alternatively, you can double click the mounted SDL2 on your desktop to see the contents of the downloaded SDL2 files if they're not showing already and drag the folder SDL2.framework into the 'Frameworks'folder in '/Library', but its a pain to get finder to show you the proper root version of /Library: https://www.macinstruct.com/tutorials/how-to-open-the-library-folder-on-your-mac/
+## 4b. Alternatively, you can double click the mounted SDL2 on your desktop to see the contents of the downloaded SDL2 files if they're not showing already and drag the folder SDL2.framework into the 'Frameworks' folder in '/Library', but its a pain to get finder to show you the proper root version of /Library: https://www.macinstruct.com/tutorials/how-to-open-the-library-folder-on-your-mac/
 
 ## 5. [optional] Open the readme in TextEdit
 open -a TextEdit /Volumes/SDL2/ReadMe.txt
