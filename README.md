@@ -37,14 +37,14 @@ cd QuickSDL2Mac
 ## 9. [optional: take a look at the folder contents]
 ls -a
 
-## 10. [in Terminal] Make sure you have Clang++ compiler by checking for the version. You may be able to use other compilers but I didn't test others, g++ worked but it just seemed to redirect and use Clang++
+## 10. [in Terminal] Make sure you have Clang++ compiler by checking for the version. You may be able to use other compilers but I didn't test others. The command using 'g++' worked but it just seemed to redirect and use Clang++
 clang++ -v
 
-## 11. [in Terminal] If you obviously don't have Clang++ you can download XCode for Mac (kinda bloated but lots of utilities)
+## 11. [in Terminal] If you obviously don't have Clang++ from the resulting message you can download XCode for Mac to get it
 command xcode-select --install
 ## Note: make sure you close the terminal window and open a new one to verify the 'clang++ -v' command so it can see the new install
 
-## 12. [in Terminal] Increase permission for our script that builds and launches the c++ app (obviously read thru the script and make sure it's not a virus :P)
+## 12. [in Terminal] Increase permission for the Bash script that builds and launches the c++ app (obviously read thru the script and make sure it's not a virus :P)
 chmod u+x comprun.sh
 
 ## 13a. [in Terminal] run the below script to try and compile the c++ code, you will probably get the security error because we are trying to use downloaded SDL2 code and MacOs doesn't trust it by default. Hopefully you see the popup. You then need to open 'Security and Privacy' (COMMAND + SPACEBAR -> search "security and privacy" and press 'Enter'). Look for the option to approve the security exception, (click the lock icon as needed to allow changes and save). Then try and run the script again:
@@ -52,4 +52,4 @@ chmod u+x comprun.sh
 
 ## 13b. Alternatively you can find 'app' in the folder in finder and double click it but the script is pretty convenient
 
-### Hopefully it works for you! You should have a pink rectangle you can move with the arrow keys...maybe more if I've added functinality to the starter code. Its all in one file containinig the main method, so you obviously want to start breaking it apart into classes or you'll end up with spaghetti code but you do you! If you have issues or something is confusing, go to jrose.me/contact and send me a message or leave a comment on the YouTube video for this code in my channel; https://www.youtube.com/channel/UCSrxiAK9F0pyxDUpr3ETf_Q which should eventually be channel/jrose.me. I desperately want to be loved so I'll probably look into your issue pretty quickly.
+### Hopefully it works for you after approving the security change in your settings. You should have a pink rectangle you can move with the arrow keys...maybe more if I've added functinality to the starter code. It's all in one file containinig the main method, so you obviously want to start breaking it apart into classes or you'll end up with spaghetti code...but you do you! If you have issues or something is confusing, go to jrose.me/contact and send me a message or leave a comment on the YouTube video for this code in my channel; https://www.youtube.com/channel/UCSrxiAK9F0pyxDUpr3ETf_Q which should eventually be channel/jrose.me. I desperately want to be loved so I'll probably look into your issue pretty quickly.
