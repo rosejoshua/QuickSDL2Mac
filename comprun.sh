@@ -5,13 +5,13 @@
 # without the quotes once to update permissions. Then to
 # run the script, from the same Terminal type "./comprun.sh"
 
+# this worked for me on MacOS 12.4 Monterey, using SDL2 version 2.24.0
+
 # exit script at first error
 set -u -e
 
-# maybe need a check for clang or g++ here, then install xcode or a compiler
-# if you get error related to Clang, you can try g++ compiler
-#clang++ app.cpp -I/Library/Frameworks/SDL2.framework/Headers -F/Library/Frameworks -framework SDL2 -o app
-g++ app.cpp -I/Library/Frameworks/SDL2.framework/Headers -F/Library/Frameworks -framework SDL2 -o app
+# Compile it and output to executable called 'app'
+clang++ app.cpp -I/Library/Frameworks/SDL2.framework/Headers -F/Library/Frameworks -framework SDL2 -o app
 
 # runs the app
 ./app

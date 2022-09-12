@@ -1,10 +1,20 @@
 # Go download latest version of SDL for Mac (ends in .dmg, this method was tested with: SDL2-2.24.0.dmg): 
 https://github.com/libsdl-org/SDL/releases/
 
-# Grab filename and mount it (alternatively you can go double click the file in your Downloads thru finder)
+# Open a Terminal window
+'COMMAND + SPACEBAR' -> search 'Terminal' and press 'Enter'
+
+# Resolve the filename of the downloaded SDL2 package and mount it by copy pasting the command that starts 
+# with hdiutil, followed by the 'Enter' key
+# (alternatively you can go double click the file in your Downloads thru finder)
 hdiutil attach ~/Downloads/SDL*.dmg
 
-# copy SDL framework into ~/Library/Frameworks (make sure you only have one SDL2.*.dmg in your downloads folder or this will error)
+# Use the below command to copy SDL framework into /Library/Frameworks (make sure you only have one SDL2.*.dmg 
+# in your downloads folder or this will error). 
+# This is NOT the same as ~/Library/Frameworks...both can work by my code is set up to use the root version of Library (/Library, not ~/Library)
+# Alternatively, you can double click the mounted SDL2 on your desktop to see the contents of the downloaded SDL2 files if they're not showing 
+# already and drag the folder SDL2.framework into the 'Frameworks'folder in '/Library', but its a pain to get finder to show you the proper 
+# root version of /Library: https://www.macinstruct.com/tutorials/how-to-open-the-library-folder-on-your-mac/
 sudo cp -r /Volumes/SDL2/SDL2.framework /Library/Frameworks/Headers
 
 # [optional] open the readme in TextEdit
@@ -13,4 +23,35 @@ open -a TextEdit /Volumes/SDL2/ReadMe.txt
 # eject/unmount .dmg (can do this on desktop using mouse as well)
 hdiutil unmount /Volumes/SDL2
 
-# clone the repo for the starter code
+# navigate to a folder where you want the downloaded folder to go
+# and clone the repo for the starter code (if you haven't already)
+git clone https://github.com/rosejoshua/QuickSDL2Mac.git
+
+# go into the folder we just downloaded from github
+cd QuickSDL2Mac
+
+# [optional: take a look at the folder contents]
+ls -a
+
+# Makre sure you have Clang++ compiler. You may be able to use other compilers but I didn't test others, g++ worked but just used Clang++
+clang++ -v
+
+# if you obviously dont have Clang++ you can download XCode for Mac (kinda bloated but lots of utilities)
+command xcode-select --install
+# make sure you close the terminal window and open a new one to verify the 'clang++ -v' command so it can see the new install
+
+# increase permission for our script that builds and launches the c++ app (obviously read thru the script and make sure it's not a virus :P)
+chmod u+x comprun.sh
+
+# run the below script to try and compile the c++ code, you will probably get the security error because we are trying to use downloaded SDL2 code 
+# and MacOs doesn't trust it by default. Hopefully you see the popup. You then need to open 'Security and Privacy' (COMMAND + SPACEBAR -> search "security
+# and privacy" and press 'Enter'). Look for the option to approve the security exception, (click the lock icon as needed to allow changes and save). Then
+# try and run the script again:
+./comprun.sh
+
+#alternatively you can find 'app' in the folder in finder and double click it but the script is pretty convenient
+
+# hopefully it works for you! You should have a pink rectangle you can move with the arrow keys...maybe more if I've added functinality to the starter code.
+# Its all in one file containinig the main method, so you obviously want to start breaking it apart into classes or you'll end up with spaghetti code but
+# follow your dreams! If you have issues or something is confusing, go to jrose.me/contact and send me a message or leave a comment on the YouTube video 
+# for this code in my channel; https://www.youtube.com/channel/UCSrxiAK9F0pyxDUpr3ETf_Q should be @jrose.me once I get enough views
