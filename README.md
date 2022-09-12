@@ -1,6 +1,5 @@
 # QuickSDL2Mac
-I went to get SDL running on my Mac after using it on Windows for a while and had a terrible time getting the newer version to work. After finally 
-figuring it out, I wanted to put this together to hopefully save the next person a bunch of time and frustration.
+I went to get SDL running on my Mac after using it on Windows for a while and had a terrible time getting the newer version to work. After finally figuring it out, I wanted to put this together to hopefully save the next person a bunch of time and frustration.
 
 This is with SDL 2 version 2.24.0 tested on MacOS Monterey 12.4 using Clang++. I tried to make it as beginner-friendly as possible.
 Please reach out at jrose.me/contact if there is something confusing or needing correction.
