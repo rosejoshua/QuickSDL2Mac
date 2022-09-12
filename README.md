@@ -3,7 +3,7 @@ I went to get SDL running on my Mac after using it on Windows for a while and ha
 figuring it out, I wanted to put this together to hopefully save the next person a bunch of time and frustration. In the SDL dev community's defense,
 apparently Apple made some changes with how frameworks are referenced and it resulted in some confusing changes for setting up SDL on Mac.
 
-This is with SDL 2 version 2.24.0 tested on MacOS Monterey 12.4 using Clang++ and G++. I tried to make it as beginner-friendly as possible! 
+This is with SDL 2 version 2.24.0 tested on MacOS Monterey 12.4 using Clang++. I tried to make it as beginner-friendly as possible! 
 Please reach out at jrose.me/contact if there is something confusing or needing correction
 
 ## 1. Go download latest version of SDL for Mac (ends in .dmg, this method was tested with: SDL2-2.24.0.dmg): 
