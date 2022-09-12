@@ -25,7 +25,7 @@ sudo cp -r /Volumes/SDL2/SDL2.framework /Library/Frameworks/
 ## 5. [optional] Open the readme in TextEdit
 open -a TextEdit /Volumes/SDL2/ReadMe.txt
 
-## 6. [in Terminal] Eject/unmount .dmg (can do this on desktop using right-click -> 'eject' as well)
+## 6. [in Terminal, not super important for now] Eject/unmount .dmg (can do this on desktop using right-click -> 'eject' as well)
 hdiutil unmount /Volumes/SDL2
 
 ## 7. [in Terminal] navigate to a folder where you want the downloaded folder to go and clone the repo for the starter code (if you haven't already)
