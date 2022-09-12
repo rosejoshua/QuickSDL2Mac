@@ -1,0 +1,55 @@
+# QuickSDL2Mac
+I went to get SDL running on my Mac after using it on Windows for a while and had a terrible time getting the newer version to work. After finally 
+figuring it out, I wanted to put this together to hopefully save the next person a bunch of time and frustration. In the SDL dev community's defense,
+apparently Apple made some changes with how frameworks are referenced and it resulted in some confusing changes for setting up SDL on Mac.
+
+This is with SDL 2 version 2.24.0 tested on MacOS Monterey 12.4 using Clang++ and G++. I tried to make it as beginner-friendly as possible! 
+Please reach out at jrose.me/contact if there is something confusing or needing correction
+
+## 1. Go download latest version of SDL for Mac (ends in .dmg, this method was tested with: SDL2-2.24.0.dmg): 
+https://github.com/libsdl-org/SDL/releases/
+
+## 2. Open a Terminal window
+'COMMAND + SPACEBAR' -> search 'Terminal' and press 'Enter'
+
+## 3a. [in Terminal] Resolve the filename of the downloaded SDL2 package and mount it with the following command: 
+hdiutil attach ~/Downloads/SDL*.dmg
+## 3b. (alternatively you can go double click the file in your Downloads thru finder)
+
+
+## 4a. [in Terminal] Use the below command to copy SDL framework into '/Library/Frameworks' (make sure you only have one SDL2.*.dmg in your downloads folder or this will error). 
+sudo cp -r /Volumes/SDL2/SDL2.framework /Library/Frameworks/
+## Note: This is NOT the same as '~/Library/Frameworks'...both can work by my code is set up to use the root version of Library (/Library, not ~/Library)
+## 4b. Alternatively, you can double click the mounted SDL2 on your desktop to see the contents of the downloaded SDL2 files if they're not showing already and drag the folder SDL2.framework into the 'Frameworks'folder in '/Library', but its a pain to get finder to show you the proper root version of /Library: https://www.macinstruct.com/tutorials/how-to-open-the-library-folder-on-your-mac/
+
+## 5. [optional] Open the readme in TextEdit
+open -a TextEdit /Volumes/SDL2/ReadMe.txt
+
+## 6. [in Terminal] Eject/unmount .dmg (can do this on desktop using right-click -> 'eject' as well)
+hdiutil unmount /Volumes/SDL2
+
+## 7. [in Terminal] navigate to a folder where you want the downloaded folder to go and clone the repo for the starter code (if you haven't already)
+git clone https://github.com/rosejoshua/QuickSDL2Mac.git
+
+## 8. [in Terminal] Go into the folder we just downloaded from github
+cd QuickSDL2Mac
+
+## 9. [optional: take a look at the folder contents]
+ls -a
+
+## 10. [in Terminal] Make sure you have Clang++ compiler by checking for the version. You may be able to use other compilers but I didn't test others, g++ worked but it just seemed to redirect and use Clang++
+clang++ -v
+
+## 11. [in Terminal] If you obviously don't have Clang++ you can download XCode for Mac (kinda bloated but lots of utilities)
+command xcode-select --install
+## Note: make sure you close the terminal window and open a new one to verify the 'clang++ -v' command so it can see the new install
+
+## 12. [in Terminal] Increase permission for our script that builds and launches the c++ app (obviously read thru the script and make sure it's not a virus :P)
+chmod u+x comprun.sh
+
+## 13a. [in Terminal] run the below script to try and compile the c++ code, you will probably get the security error because we are trying to use downloaded SDL2 code and MacOs doesn't trust it by default. Hopefully you see the popup. You then need to open 'Security and Privacy' (COMMAND + SPACEBAR -> search "security and privacy" and press 'Enter'). Look for the option to approve the security exception, (click the lock icon as needed to allow changes and save). Then try and run the script again:
+./comprun.sh
+
+## 13b. Alternatively you can find 'app' in the folder in finder and double click it but the script is pretty convenient
+
+### Hopefully it works for you! You should have a pink rectangle you can move with the arrow keys...maybe more if I've added functinality to the starter code. Its all in one file containinig the main method, so you obviously want to start breaking it apart into classes or you'll end up with spaghetti code but you do you! If you have issues or something is confusing, go to jrose.me/contact and send me a message or leave a comment on the YouTube video for this code in my channel; https://www.youtube.com/channel/UCSrxiAK9F0pyxDUpr3ETf_Q which should eventually be channel/jrose.me. I desperately want to be loved so I'll probably look into your issue pretty quickly.
