@@ -49,6 +49,6 @@ chmod u+x comprun.sh
 ## 13a. [in Terminal] run the below script to try and compile the c++ code, you will probably get the security error because we are trying to use downloaded SDL2 code and MacOs doesn't trust it by default. Hopefully you see the popup. You then need to open 'Security and Privacy' (COMMAND + SPACEBAR -> search "security and privacy" and press 'Enter'). Look for the option to approve the security exception, (click the lock icon as needed to allow changes and save). Then try and run the script again:
 ./comprun.sh
 
-## 13b. Alternatively you can find 'app' in the folder in finder and double click it but the script is pretty convenient
+## 13b. Alternatively you can find 'app' in the folder in finder and double click it but the script is pretty convenient...rerun the script after you change the code
 
 ### Hopefully it works for you after approving the security change in your settings. You should have a pink rectangle you can move with the arrow keys...maybe more if I've added functinality to the starter code. It's all in one file containinig the main method, so you obviously want to start breaking it apart into classes or you'll end up with spaghetti code...but you do you! If you have issues or something is confusing, go to jrose.me/contact and send me a message or leave a comment on the YouTube video for this code in my channel; https://www.youtube.com/channel/UCSrxiAK9F0pyxDUpr3ETf_Q which should eventually be channel/jrose.me. I desperately want to be loved so I'll probably look into your issue pretty quickly.
