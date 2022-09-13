@@ -10,43 +10,44 @@ https://github.com/libsdl-org/SDL/releases/
 ## 2. Open a Terminal window
 'COMMAND + SPACEBAR' -> search 'Terminal' and press 'Enter'
 
-## 3a. [in Terminal] Resolve the filename of the downloaded SDL2 package and mount it with the following command: 
+## 3a. [in Terminal] This command will resolve the filename of the downloaded SDL2 package and mount it for you: 
 hdiutil attach ~/Downloads/SDL*.dmg
 ## 3b. (alternatively you can go double click the file in your Downloads thru finder)
+## NOTE: You may get a security warning because the downloaded file is not trusted code. This can be fixed by going into System Preferences -> Security and Privacy, and look for the blocked action. You can click the lock icon to allow changes, approve the exception, and reclick the lock to save.
 
-## 4a. [in Terminal] Use the below command to copy SDL framework into '/Library/Frameworks' (make sure you only have one SDL2.*.dmg in your downloads folder or this will error). 
+## 4a. [in Terminal] The below command will copy the SDL framework into '/Library/Frameworks' (make sure you only have one SDL2.*.dmg in your downloads folder or this will error. Multiple downloads can happen if you've been at this for a while). 
 sudo cp -r /Volumes/SDL2/SDL2.framework /Library/Frameworks/
 ### Note: This is NOT the same as '~/Library/Frameworks'...both can work but my code is set up to use the root version of Library (/Library, not ~/Library)
 ## 4b. Alternatively, you can double click the mounted SDL2 on your desktop to see the contents of the downloaded SDL2 files if they're not showing already and drag the folder SDL2.framework into the 'Frameworks' folder in '/Library'. However, it is a pain to get finder to show you the proper root version of '/Library': https://www.macinstruct.com/tutorials/how-to-open-the-library-folder-on-your-mac/
 
-## 5. [optional] Open the readme in TextEdit
+## 5. [optional] This command will open the readme in TextEdit
 open -a TextEdit /Volumes/SDL2/ReadMe.txt
 
 ## 6. [in Terminal, not super important for now] Eject/unmount .dmg (can do this on desktop using right-click -> 'eject' as well)
 hdiutil unmount /Volumes/SDL2
 
-## 7. [in Terminal] navigate to a folder where you want the downloaded project folder to go and clone the repo for the starter code (if you haven't already)
+## 7. [in Terminal] Navigate to a directory/folder where you want the downloaded project folder to be (anywhere memorable like a Dev folder or whatever) and input the below command to get the starter code (if you haven't already). The command 'cd ..' will go up one folder level, 'cd aDirectoryNameHere' will go into a directory/folder that exists in the current directory/folder, and 'mkdir ChooseADirectoryNameThatDoesntExist' will make a new directory, then you can use 'cd ChosenDirectoryNameGoesHere' to go into that folder/directory. Use the command 'ls' to see what is in the present directory. You can use the tab key after typing a few letters and Terminal will attempt to complete a name if it exists.
 git clone https://github.com/rosejoshua/QuickSDL2Mac.git
 
-## 8. [in Terminal] Go into the folder we just downloaded from github
+## 8. [in Terminal] Input the command 'ls' and you should see the new folder/directory that downloaded. Go into the folder we just downloaded from github
 cd QuickSDL2Mac
 
 ## 9. [optional: take a look at the folder contents]
 ls -a
 
-## 10. [in Terminal] Make sure you have Clang++ compiler by checking for the version. You may be able to use other compilers but I didn't test others. The command using 'g++' worked but it just seemed to redirect and use Clang++
+## 10. [in Terminal] Make sure you have Clang++ compiler by checking for the version by inputing the next command. If you get something other than a version number that resembles computer speak for 'wtf' then go to step 11. Otherwise skip to step 12.
 clang++ -v
 
 ## 11. [in Terminal] If you obviously don't have Clang++ from the resulting message you can download XCode for Mac to get it
 command xcode-select --install
 ## Note: make sure you close the terminal window and open a new one to verify the 'clang++ -v' command so it can see the new install
 
-## 12. [in Terminal] Increase permission for the Bash script that builds and launches the c++ app (obviously read thru the script and make sure it's not a virus :P)
+## 12. [in Terminal] This command will increase permissions for the script (list of commands like the one's we've been inputing that autoexecute) that builds and launches the c++ app (obviously read thru the script and make sure it's not a virus :P)
 chmod u+x comprun.sh
 
-## 13a. [in Terminal] run the below script to try and compile the c++ code, you will probably get the security error because we are trying to use downloaded SDL2 code and MacOs doesn't trust it by default. Hopefully you see the popup. You then need to open 'Security and Privacy' (COMMAND + SPACEBAR -> search "security and privacy" and press 'Enter'). Look for the option to approve the security exception, (click the lock icon as needed to allow changes and save). Then try and run the script again:
+## 13a. [in Terminal] Use the below command to run the script to try and compile the c++ code, you will probably get the security error because we are trying to use downloaded SDL2 code and MacOs doesn't trust it by default like the earlier security problem you may have experienced. Hopefully you see the popup. You then need to open 'Security and Privacy' (COMMAND + SPACEBAR -> search "security and privacy" and press 'Enter'). Look for the option to approve the security exception, (click the lock icon as needed to allow changes and save). Then try and run the script again:
 ./comprun.sh
 
-## 13b. Alternatively you can find 'app' in the folder in finder and double click it but the script is pretty convenient...rerun the script after you change the code to recompile and relaunch the app
+## 13b. Rerun the above command after you change the code to recompile with the changes you made and relaunch the app
 
 ### Hopefully it works for you after approving the security change in your settings. You should have a pink rectangle you can move with the arrow keys...maybe more if I've added functinality to the starter code. It's all in one file containinig the main method, so you obviously want to start breaking it apart into classes or you'll end up with spaghetti code...but you do you! If you have issues or something is confusing, go to jrose.me/contact and send me a message or leave a comment on the YouTube video for this code in my channel; https://www.youtube.com/channel/UCSrxiAK9F0pyxDUpr3ETf_Q which should eventually be channel/jrose.me. I desperately want to be loved so I'll probably look into your issue pretty quickly.
