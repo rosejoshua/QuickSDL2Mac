@@ -48,4 +48,4 @@ chmod u+x comprun.sh
 ## 13a. [in Terminal] Use the below command to run the script to try and compile the c++ code, you will probably get the security error because we are trying to use downloaded SDL2 code and MacOs doesn't trust it by default like the earlier security problem you may have experienced. Hopefully you see the popup. You then need to open 'Security and Privacy' (COMMAND + SPACEBAR -> search "security and privacy" and press 'Enter'). Look for the option to approve the security exception, (click the lock icon as needed to allow changes and save). Then try and run the script again:
 ./comprun.sh
 
-## 13b. Rerun the above command after you change the code to recompile with the changes you made and relaunch the app.
+## 13b. Rerun the above command after your changes to the program to recompile and relaunch the app.
